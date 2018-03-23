@@ -1,6 +1,5 @@
 # SourceCodeDive
-projects to dive into angularjs and react source code
+projects to dive into source code
 
- myangular is based on 'build your own angularjs'
- 
- myreact is based on 'build your own reactjs'
+(jquery,angularjs,react,vue...)
+
