@@ -23,3 +23,4 @@ function Parser(lexer) {
 Parser.prototype.parse = function (text) {
     return this.astCompiler.compile(text);
 };
+//
