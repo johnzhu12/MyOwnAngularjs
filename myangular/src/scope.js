@@ -58,7 +58,7 @@ Scope.prototype.$$digestOnce = function () {
                 }
             }
         } catch (e) {
-            console.error(e);
+            // console.error(e);
         }
 
     });
@@ -81,7 +81,7 @@ Scope.prototype.$digest = function () {
                 var asyncTask = this.$$asyncQueue.shift();
                 asyncTask.scope.$eval(asyncTask.expression);
             } catch (e) {
-                console.error(e);
+                // console.error(e);
             }
         }
         dirty = this.$$digestOnce();
@@ -95,7 +95,7 @@ Scope.prototype.$digest = function () {
         try {
             this.$$postDigestQueue.shift()();
         } catch (e) {
-            console.error(e);
+            // console.error(e);
         }
     }
 };
@@ -148,7 +148,7 @@ Scope.prototype.$$flushApplyAsync = function () {
         try {
             this.$$applyAsyncQueue.shift()();
         } catch (e) {
-            console.error(e);
+            // console.error(e);
         }
     }
     this.$$applyAsyncId = null;
@@ -165,12 +165,9 @@ Scope.prototype.$watchGroup = function (watchFns, listenerFn) {
 
     if (watchFns.length === 0) {
         var shouldCall = true;
-        console.log(shouldCall);
-        console.log('走了1');
+
         self.$evalAsync(function () {
-            console.log(shouldCall);
             if (shouldCall) {
-                console.log('走了2');
                 listenerFn(newValues, newValues, self);
             }
         });
